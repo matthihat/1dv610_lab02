@@ -12,6 +12,7 @@
   "author": "Mattias Törnqvist",
   "license": "ISC",
   "dependencies": {
+    "class-validator": "^0.13.2",
     "express": "^4.17.2",
     "http-errors": "^2.0.0",
     "morgan": "^1.10.0"
