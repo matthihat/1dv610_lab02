@@ -1,6 +1,20 @@
 <mat-card>
   <mat-card-title>
-    hellllo
-    <button mat-raised-button color="primary">Primary</button>
+    Add a user
   </mat-card-title>
+  <mat-card-content>
+<form class="example-form" (submit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Username</mat-label>
+    <input type="text" matInput [formControl]="usernameFormControl" placeholder="Ex. John Doe">
+    <mat-error *ngIf="usernameFormControl.hasError('required')">
+      Please enter a username
+    </mat-error>
+    <mat-error *ngIf="usernameFormControl.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <button mat-raised-button type="submit" color="primary">Primary</button>
+</form>
+  </mat-card-content>
 </mat-card>

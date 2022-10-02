@@ -6,8 +6,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddUserComponent } from './add-user/add-user.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button'
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,11 @@ import { MatButtonModule } from '@angular/material/button'
     BrowserModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
