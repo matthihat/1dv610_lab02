@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AddUserComponent } from './add-user/add-user.component';
+import { AddUserComponent } from './components/add-user/add-user.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { MatCardModule } from '@angular/material/card';

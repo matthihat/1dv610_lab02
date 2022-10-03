@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-title>
+    Add a user
+  </mat-card-title>
+  <mat-card-content>
+<form class="add-user-form" (submit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Username</mat-label>
+    <input type="text"
+    (input)="onInput()"
+    matInput
+    [formControl]="usernameFormControl"
+    placeholder="Ex. John Doe">
+    <mat-error *ngIf="usernameFormControl.invalid">
+      {{getErrorMessage()}}
+    </mat-error>
+  </mat-form-field>
+  <button #submitButton mat-raised-button type="submit" color="primary">Save</button>
+</form>
+  </mat-card-content>
+</mat-card>
