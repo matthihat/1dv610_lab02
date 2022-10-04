@@ -2,7 +2,8 @@ import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angula
 import { FormControl, Validators } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { User } from 'src/app/models/user/User.model';
-import { UserService } from 'src/app/services/user.service';
+import { UserService } from 'src/app/services/user/user.service';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-add-user',
@@ -59,7 +60,7 @@ export class AddUserComponent implements AfterViewInit {
 
   private addUser() {
     if(this.usernameFormControl.value) {
-      const user: User = { name: this.usernameFormControl.value}
+      const user: User = { name: this.usernameFormControl.value, userId: uuidv4()}
       this.userService.add(user)
     }
   }
