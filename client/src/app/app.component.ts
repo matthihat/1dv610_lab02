@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { formOptions } from './models/forms/text-input.model';
+import { FormOptionsService } from './services/forms/form-options.service';
+import { UserRandomizerService } from './services/randomizer/user-randomizer.service';
 
 @Component({
   selector: 'app-root',
@@ -10,32 +12,13 @@ export class AppComponent {
   title = 'client';
   userNameFormOptions: formOptions;
 
-  constructor() {
-    this.userNameFormOptions = this.createUsernameFormOptions()
+  constructor(private formOptionService: FormOptionsService,
+    private userRandomizerService: UserRandomizerService) {
+    this.userNameFormOptions = this.formOptionService.createUsernameFormOptions()
   }
 
-  private createUsernameFormOptions(): formOptions {
-    return {
-      validators: {
-        minLength: {
-          length: 3,
-          errorMessage: "Must be at least 3 characters"
-        },
-        maxLength: {
-          length: 24,
-          errorMessage: "Must not be longer than 24 characters"
-        },
-        required: {
-          isRequired: true,
-          errorMessage: "Please enter a username"
-        }
-      },
-      title: 'Add user',
-      placeholder: 'Username'
-    }
-  }
-
-  onUsernameTextEvent($event: string) {
-    console.log("tog emot " + $event)
+  onUsernameTextEvent(username: string) {
+    console.log("tog emot " + username)
+    this.userRandomizerService.addUser(username)
   }
 }

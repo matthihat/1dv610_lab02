@@ -1,5 +1,6 @@
 import { Inject, Injectable, Injector } from '@angular/core';
-import { UserRandomizer } from '../../../module/src/index.js'
+// @ts-ignore
+import UserRandomizer from '../../module/src/index.js'
 
 @Injectable({
   providedIn: 'root'
@@ -7,9 +8,16 @@ import { UserRandomizer } from '../../../module/src/index.js'
 export class UserRandomizerService {
 
   userRandomizer: UserRandomizer;
+
   constructor() {
     this.userRandomizer = new UserRandomizer();
     // this.userRandomizer
+   }
+
+   addUser(username: string) {
+    this.userRandomizer.addUser(username)
+    const user = this.userRandomizer.getRandomUser()
+    console.log(user.name)
    }
 
 
