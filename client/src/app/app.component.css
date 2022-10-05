@@ -1,3 +1,8 @@
 :host {
   padding: 20px;
 }
+
+.text-fields {
+  display: flex;
+  justify-content: space-around;
+}

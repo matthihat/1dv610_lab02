@@ -11,10 +11,12 @@ import { UserRandomizerService } from './services/randomizer/user-randomizer.ser
 export class AppComponent {
   title = 'client';
   userNameFormOptions: formOptions;
+  taskFormOptions: formOptions;
 
   constructor(private formOptionService: FormOptionsService,
     private userRandomizerService: UserRandomizerService) {
     this.userNameFormOptions = this.formOptionService.createUsernameFormOptions()
+    this.taskFormOptions = this.formOptionService.createTaskFormOptions()
   }
 
   onUsernameTextEvent(username: string) {

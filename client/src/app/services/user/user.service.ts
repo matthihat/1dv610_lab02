@@ -6,7 +6,7 @@ import { User } from 'src/app/models/user/User.model';
   providedIn: 'root'
 })
 export class UserService {
-  private users: User[] = [];
+  // private users: User[] = [];
   private userSource = new Subject<User>();
   public userAdded$ = this.userSource.asObservable();
 
