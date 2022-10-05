@@ -5,12 +5,12 @@
   <mat-card-content>
 <form class="text-input-form" (submit)="onTextInput()">
   <mat-form-field appearance="fill">
-    <mat-label>{{formOptions?.placeholder}}</mat-label>
+    <mat-label>{{formOptions?.label}}</mat-label>
     <input type="text"
     (input)="onInput()"
     matInput
     [formControl]="formControl!"
-    placeholder="Ex. John Doe">
+    [placeholder]="placeholder">
     <mat-error *ngIf="formControl?.invalid">
       {{getErrorMessage()}}
     </mat-error>

@@ -58,6 +58,10 @@ export class TextInputComponent implements OnInit, AfterViewInit {
     return ''
   }
 
+  get placeholder() {
+    return this.formOptions ? this.formOptions.placeholder : ""
+  }
+
   private createFormControls() {
     if (this.formOptions?.validators.minLength) {
       return new FormControl('', [Validators.required, Validators.minLength(this.formOptions.validators.minLength.length), Validators.maxLength(this.formOptions.validators.maxLength.length)])
@@ -86,5 +90,4 @@ export class TextInputComponent implements OnInit, AfterViewInit {
       this.submitButton.disabled = false
     }
   }
-
 }

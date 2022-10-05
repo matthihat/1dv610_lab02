@@ -1,5 +1,6 @@
 export interface formOptions {
   title: string,
+  label: string,
   placeholder: string
   validators: {
     minLength: {

@@ -25,7 +25,8 @@ export class FormOptionsService {
         }
       },
       title: 'Add user',
-      placeholder: 'Username'
+      placeholder: 'ex. John Doe',
+      label: 'Username'
     }
   }
 
@@ -46,7 +47,8 @@ export class FormOptionsService {
         }
       },
       title: 'New task',
-      placeholder: 'Task'
+      placeholder: 'Buy groceries',
+      label: 'Task'
     }
   }
 }
