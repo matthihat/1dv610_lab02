@@ -1,3 +1,3 @@
-<app-add-user></app-add-user>
+<app-text-input (textEvent)="onUsernameTextEvent($event)" [formOptions]="userNameFormOptions"></app-text-input>
 <mat-divider></mat-divider>
 <app-user-list></app-user-list>

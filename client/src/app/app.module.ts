@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { AddUserComponent } from './components/add-user/add-user.component';
+import { TextInputComponent } from './components/add-user/text-input.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 import { MatCardModule } from '@angular/material/card';
@@ -18,7 +18,7 @@ import {MatDividerModule} from '@angular/material/divider';
 @NgModule({
   declarations: [
     AppComponent,
-    AddUserComponent,
+    TextInputComponent,
     UserListComponent
   ],
   imports: [

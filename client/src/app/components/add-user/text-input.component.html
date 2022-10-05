@@ -1,17 +1,17 @@
 <mat-card>
   <mat-card-title>
-    Add a user
+  {{formOptions?.title}}
   </mat-card-title>
   <mat-card-content>
-<form class="add-user-form" (submit)="onSubmit()">
+<form class="text-input-form" (submit)="onTextInput()">
   <mat-form-field appearance="fill">
-    <mat-label>Username</mat-label>
+    <mat-label>{{formOptions?.placeholder}}</mat-label>
     <input type="text"
     (input)="onInput()"
     matInput
-    [formControl]="usernameFormControl"
+    [formControl]="formControl!"
     placeholder="Ex. John Doe">
-    <mat-error *ngIf="usernameFormControl.invalid">
+    <mat-error *ngIf="formControl?.invalid">
       {{getErrorMessage()}}
     </mat-error>
   </mat-form-field>
