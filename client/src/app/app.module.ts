@@ -11,7 +11,7 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UserListComponent } from './components/user-list/user-list.component';
+import { ElementListComponent } from './components/user-list/element-list.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 
@@ -19,7 +19,7 @@ import {MatDividerModule} from '@angular/material/divider';
   declarations: [
     AppComponent,
     TextInputComponent,
-    UserListComponent
+    ElementListComponent
   ],
   imports: [
     BrowserModule,

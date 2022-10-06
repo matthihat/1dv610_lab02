@@ -3,4 +3,4 @@
 <app-text-input [formOptions]="taskFormOptions"></app-text-input>
 </div>
 <mat-divider></mat-divider>
-<app-user-list></app-user-list>
+<app-element-list (clearListEvent)="onClearListEvent()" [listOptions]="userListOptions" [elements]="usernames"></app-element-list>

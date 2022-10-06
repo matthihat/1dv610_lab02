@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { formOptions } from 'src/app/models/forms/text-input.model';
+import { formOptions } from './form-options.model';
 
 @Injectable({
   providedIn: 'root'

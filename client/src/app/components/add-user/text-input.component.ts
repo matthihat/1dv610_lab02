@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
-import { formOptions } from 'src/app/models/forms/text-input.model';
+import { formOptions } from 'src/app/services/forms/form-options.model';
 
 @Component({
   selector: 'app-text-input',

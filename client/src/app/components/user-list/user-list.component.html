@@ -1,9 +1,0 @@
-<h3>Users</h3>
-<i><p class="noUsersMessage" *ngIf="isUsersEmpty">No users added</p></i>
-<div class="card-container">
-<mat-card *ngFor="let user of users">
-  <mat-icon fontIcon="person"></mat-icon>
-  <mat-card-subtitle>{{user.name}}</mat-card-subtitle>
-</mat-card>
-</div>
-<button (click)="handleClear()" [disabled]="shouldDisableClearButton()" mat-raised-button type="reset" color="warn">Clear</button>

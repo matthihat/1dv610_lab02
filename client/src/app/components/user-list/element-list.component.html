@@ -1,0 +1,12 @@
+<h3>{{title}}</h3>
+<i><p *ngIf="isElementsEmpty">{{emptyListMessage}}</p></i>
+<div class="list-container">
+<mat-card *ngFor="let element of elements">
+  <!-- <mat-icon [fontIcon]="icon"></mat-icon> -->
+  <mat-card-title>{{cardTitle}}</mat-card-title>
+  <mat-card-subtitle>{{element}}</mat-card-subtitle>
+</mat-card>
+</div>
+<div class="list-container">
+<button (click)="handleClear()" [disabled]="shouldDisableClearButton()" mat-raised-button type="reset" color="warn">Clear</button>
+</div>
