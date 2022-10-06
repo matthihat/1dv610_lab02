@@ -16,4 +16,13 @@ export class ListOptionsService {
     }
     return listOptions
   }
+
+  createTaskListOptions(): ListOptions {
+    const listOptions: ListOptions = {
+      title: "Tasks",
+      emptyListMessage: "No tasks added",
+      cardTitle: "✏️"
+    }
+    return listOptions
+  }
 }

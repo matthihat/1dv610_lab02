@@ -17,7 +17,9 @@ export class AppComponent {
   userNameFormOptions: formOptions;
   taskFormOptions: formOptions;
   userListOptions: ListOptions;
+  taskListOptions: ListOptions;
   usernames: string[] = []
+  tasks: string[] = []
 
   constructor(
     private formOptionService: FormOptionsService,
@@ -26,6 +28,7 @@ export class AppComponent {
     this.userNameFormOptions = this.formOptionService.createUsernameFormOptions()
     this.taskFormOptions = this.formOptionService.createTaskFormOptions()
     this.userListOptions = this.listOptionsService.createUserListOptions()
+    this.taskListOptions = this.listOptionsService.createTaskListOptions()
     this.registerSubscriptions()
   }
 
@@ -50,8 +53,11 @@ export class AppComponent {
     this.userService.add(user)
   }
 
-  public onClearListEvent() {
+  public onClearUserListEvent() {
     this.userService.removeUsers()
-    // this.usernames = []
+  }
+
+  public onClearTaskListEvent() {
+
   }
 }
