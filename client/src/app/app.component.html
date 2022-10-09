@@ -6,5 +6,8 @@
 <app-element-list (clearListEvent)="onClearUserListEvent()" [listOptions]="userListOptions" [elements]="usernames"></app-element-list>
 <mat-divider></mat-divider>
 <app-element-list (clearListEvent)="onClearTaskListEvent()" [listOptions]="taskListOptions" [elements]="tasks"></app-element-list>
+<div class="text-fields">
+<button (click)="onAssignTasks()" [disabled]="!isTasksReadyToBeAssigned()" mat-raised-button type="submit" color="primary">Assign tasks</button>
+</div>
 <mat-divider></mat-divider>
-<button (click)="onAssignTasks()" mat-raised-button type="submit" color="primary">Assign tasks</button>
+<app-assigned-tasks-list [hidden]="!isTasksAssigned" [users]="getUsersWithAssignedTasks()"></app-assigned-tasks-list>

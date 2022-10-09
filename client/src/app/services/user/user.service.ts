@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { User } from 'src/app/models/user/User.model';
+import {v4 as uuidV4} from 'uuid'
 // @ts-ignore
 import UserRandomizer from '../../module/src/index.js'
 
@@ -22,7 +23,7 @@ export class UserService {
   add(user: User) {
     this.users.push(user)
     this.userSource.next(user);
-    this.userRandomizer.addUser(user.name)
+    this.userRandomizer.addUserWith(user.userId, user.name)
   }
 
   getUsers(): User[] {
@@ -34,9 +35,16 @@ export class UserService {
     this.usersRemovedSource.next(true)
   }
 
+  /**
+ * @throws {Error} - An error if no user exist
+ */
   getRandomUser(): User {
-    const retrievedUser = this.userRandomizer.getRandomUser()
-    return { name: retrievedUser.name, assignedTasks: []}
+      const retrievedUser = this.userRandomizer.getRandomUser()
+      const user = this.users.find(user => retrievedUser.id === user.userId)
+      if(!user) {
+        throw new Error('Ingen användare hittades')
+      }
+      return user
    }
 }
 

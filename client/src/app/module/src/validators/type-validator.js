@@ -8,12 +8,12 @@ export class TypeValidator {
     return;
   }
 
-  validateUserIdShouldBeANumber(userId) {
+  /*   validateUserIdShouldBeANumber(userId) {
     if (typeof userId !== "number") {
       throw new InvalidTypeException(`UserId must be a number`);
     }
     return;
-  }
+  } */
 
   validateIndexShouldBeANumber(userId) {
     if (typeof userId !== "number") {

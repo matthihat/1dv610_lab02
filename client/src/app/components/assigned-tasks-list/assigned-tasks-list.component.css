@@ -1,0 +1,9 @@
+mat-card {
+  width: fit-content;
+  min-width: 10%;
+  margin: 0.5em;
+}
+
+.list-container {
+  display: flex;
+}

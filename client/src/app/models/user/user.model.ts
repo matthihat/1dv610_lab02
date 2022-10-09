@@ -1,5 +1,5 @@
 export interface User {
   assignedTasks?: string[],
-  userId?: string,
+  userId: string,
   name: string
 }

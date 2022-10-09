@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { formOptions } from './services/forms/form-options.model';
 import { User } from './models/user/User.model';
 import { FormOptionsService } from './services/forms/form-options.service';
-import { UserRandomizerService } from './services/randomizer/user-randomizer.service';
+// import { UserRandomizerService } from './services/randomizer/user-randomizer.service';
 import { UserService } from './services/user/user.service';
 import { ListOptions } from './services/lists/list-options.model';
 import { ListOptionsService } from './services/lists/list-options.service';
 import { TaskService } from './services/task/task.service';
+import {v4 as uuidV4 } from 'uuid'
 
 @Component({
   selector: 'app-root',
@@ -21,6 +22,7 @@ export class AppComponent {
   taskListOptions: ListOptions;
   usernames: string[] = []
   tasks: string[] = []
+  isTasksAssigned = false
 
   constructor(
     private formOptionService: FormOptionsService,
@@ -36,11 +38,8 @@ export class AppComponent {
 
   private registerSubscriptions() {
     this.userService.userAdded$.subscribe(() => this.onUserAdded())
-
     this.userService.usersRemoved$.subscribe(() => this.onUsersRemoved())
-
     this.taskService.taskAdded$.subscribe(() => this.onTaskAdded())
-
     this.taskService.tasksRemoved$.subscribe(() => this.onTasksRemoved())
   }
 
@@ -61,10 +60,16 @@ export class AppComponent {
   }
 
   public onUsernameTextEvent(username: string) {
-    const user: User = {
-      name: username
-    }
+    const user = this.constructUser(username)
     this.userService.add(user)
+  }
+
+  private constructUser(username: string) {
+    return {
+      userId: uuidV4(),
+      name: username,
+      assignedTasks: []
+    }
   }
 
   public onTaskTextEvent(task: string) {
@@ -79,7 +84,23 @@ export class AppComponent {
     this.taskService.removeTasks()
   }
 
+  public isTasksReadyToBeAssigned(): boolean {
+    if (this.usernames.length > 0 && this.tasks.length > 0) {
+      return true
+    }
+    return false
+  }
+
   public onAssignTasks() {
+    // TODO Kolla att det finns användare och tasks! Visa fel om något gick fel!
     this.taskService.assignTasksToUsers()
+    this.isTasksAssigned = true
+  }
+
+  public getUsersWithAssignedTasks() {
+    if(this.isTasksAssigned) {
+      return this.userService.getUsers()
+    }
+    return
   }
 }

@@ -14,12 +14,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ElementListComponent } from './components/user-list/element-list.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
+import { AssignedTasksListComponent } from './components/assigned-tasks-list/assigned-tasks-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TextInputComponent,
-    ElementListComponent
+    ElementListComponent,
+    AssignedTasksListComponent
   ],
   imports: [
     BrowserModule,

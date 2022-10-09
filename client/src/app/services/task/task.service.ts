@@ -30,32 +30,14 @@ export class TaskService {
     this.tasksRemovedSource.next(true)
   }
 
+  /**
+ * @throws {Error} - Error if no user exists
+ */
   assignTasksToUsers() {
-    const users = this.userService.getUsers()
-    const nrOfTasks = this.tasks.length
-
     this.tasks.forEach(task => {
       const randomUser = this.userService.getRandomUser()
       randomUser.assignedTasks?.push(task)
-      console.log(randomUser)
       }
-      // randomUser.tasks = []
-      // randomUser.tasks?.push(task)
     )
-
-/*     users.forEach((user, index) => {
-      const randomUser = this.userService.getRandomUser()
-      const x = {
-        name: randomUser.name,
-        tasks: ['']
-      }
-      // x.y = [];
-      if(index <= nrOfTasks) {
-        x.tasks.push(this.tasks[index])
-      }
-      console.log(x)
-    }) */
   }
-
-  // private getTaskAt(index)
 }
