@@ -23,6 +23,7 @@ export class AppComponent {
   usernames: string[] = []
   tasks: string[] = []
   isTasksAssigned = false
+  isShouldClearAssignedTasks = false;
 
   constructor(
     private formOptionService: FormOptionsService,
@@ -49,6 +50,7 @@ export class AppComponent {
 
   private onUsersRemoved() {
     this.usernames = []
+    // this.userService.removeUsers()
   }
 
   private onTaskAdded() {
@@ -57,6 +59,7 @@ export class AppComponent {
 
   private onTasksRemoved() {
     this.tasks = []
+    // this.taskService.removeTasks()
   }
 
   public onUsernameTextEvent(username: string) {
@@ -101,6 +104,6 @@ export class AppComponent {
     if(this.isTasksAssigned) {
       return this.userService.getUsers()
     }
-    return
+    return undefined
   }
 }

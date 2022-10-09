@@ -11,8 +11,10 @@ export class TaskService {
   private tasks: string[] = [];
   private taskSource = new Subject<string>()
   private tasksRemovedSource = new Subject<boolean>()
+  private tasksAssignedSource = new Subject<boolean>()
   public readonly taskAdded$ = this.taskSource.asObservable();
   public readonly tasksRemoved$ = this.tasksRemovedSource.asObservable()
+  public readonly tasksAssigned$ = this.tasksAssignedSource.asObservable();
 
   constructor(private userService: UserService) { }
 
@@ -39,5 +41,6 @@ export class TaskService {
       randomUser.assignedTasks?.push(task)
       }
     )
+    this.tasksAssignedSource.next(true)
   }
 }

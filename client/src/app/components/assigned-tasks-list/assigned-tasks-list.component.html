@@ -1,6 +1,6 @@
 <h3>Randomly assigned tasks</h3>
 <i><p *ngIf="isElementsEmpty">"No users available"</p></i>
-<div class="list-container">
+<div class="list-container" *ngIf="!isElementsEmpty">
 <mat-card *ngFor="let user of users">
   <mat-card-title>{{user.name}}</mat-card-title>
   <div *ngIf="user && user.assignedTasks && user.assignedTasks.length > 0; else noTasks">

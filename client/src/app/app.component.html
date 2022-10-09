@@ -10,4 +10,4 @@
 <button (click)="onAssignTasks()" [disabled]="!isTasksReadyToBeAssigned()" mat-raised-button type="submit" color="primary">Assign tasks</button>
 </div>
 <mat-divider></mat-divider>
-<app-assigned-tasks-list [hidden]="!isTasksAssigned" [users]="getUsersWithAssignedTasks()"></app-assigned-tasks-list>
+<app-assigned-tasks-list [hidden]="!isTasksAssigned"></app-assigned-tasks-list>
