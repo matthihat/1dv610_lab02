@@ -4,6 +4,7 @@ mat-card {
   margin: 0.5em;
 }
 
-.list-container {
-  display: flex;
+ul {
+  margin-block-start: 0px;
+  padding-inline-start: 0.5em;
 }
