@@ -39,6 +39,12 @@ export class TextInputComponent implements OnInit, AfterViewInit {
     if (this.isFormValid()) {
       this.emitTextEvent()
     }
+    this.clearForm()
+  }
+
+  private clearForm() {
+    this.formControl?.setValue('')
+    this.formControl?.markAsPending()
   }
 
   //TODO gör ett objekt med felmeddelande o error-strind desc?

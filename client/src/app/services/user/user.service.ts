@@ -35,7 +35,8 @@ export class UserService {
   }
 
   getRandomUser(): User {
-    return this.userRandomizer.getRandomUser()
+    const retrievedUser = this.userRandomizer.getRandomUser()
+    return { name: retrievedUser.name, assignedTasks: []}
    }
 }
 

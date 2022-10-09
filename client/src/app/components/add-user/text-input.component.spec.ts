@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TextInputComponent } from './add-user.component';
+import { TextInputComponent } from './text-input.component';
 
 describe('AddUserComponent', () => {
   let component: TextInputComponent;

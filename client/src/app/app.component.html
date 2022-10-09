@@ -1,8 +1,10 @@
 <div class="text-fields">
 <app-text-input (textEvent)="onUsernameTextEvent($event)" [formOptions]="userNameFormOptions"></app-text-input>
-<app-text-input [formOptions]="taskFormOptions"></app-text-input>
+<app-text-input (textEvent)="onTaskTextEvent($event)" [formOptions]="taskFormOptions"></app-text-input>
 </div>
 <mat-divider></mat-divider>
 <app-element-list (clearListEvent)="onClearUserListEvent()" [listOptions]="userListOptions" [elements]="usernames"></app-element-list>
 <mat-divider></mat-divider>
 <app-element-list (clearListEvent)="onClearTaskListEvent()" [listOptions]="taskListOptions" [elements]="tasks"></app-element-list>
+<mat-divider></mat-divider>
+<button (click)="onAssignTasks()" mat-raised-button type="submit" color="primary">Assign tasks</button>

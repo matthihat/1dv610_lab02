@@ -6,6 +6,7 @@ import { UserRandomizerService } from './services/randomizer/user-randomizer.ser
 import { UserService } from './services/user/user.service';
 import { ListOptions } from './services/lists/list-options.model';
 import { ListOptionsService } from './services/lists/list-options.service';
+import { TaskService } from './services/task/task.service';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,8 @@ export class AppComponent {
   constructor(
     private formOptionService: FormOptionsService,
     private listOptionsService: ListOptionsService,
-    private userService: UserService) {
+    private userService: UserService,
+    private taskService: TaskService) {
     this.userNameFormOptions = this.formOptionService.createUsernameFormOptions()
     this.taskFormOptions = this.formOptionService.createTaskFormOptions()
     this.userListOptions = this.listOptionsService.createUserListOptions()
@@ -36,6 +38,10 @@ export class AppComponent {
     this.userService.userAdded$.subscribe(() => this.onUserAdded())
 
     this.userService.usersRemoved$.subscribe(() => this.onUsersRemoved())
+
+    this.taskService.taskAdded$.subscribe(() => this.onTaskAdded())
+
+    this.taskService.tasksRemoved$.subscribe(() => this.onTasksRemoved())
   }
 
   private onUserAdded() {
@@ -46,6 +52,14 @@ export class AppComponent {
     this.usernames = []
   }
 
+  private onTaskAdded() {
+    this.tasks = this.taskService.getTasks()
+  }
+
+  private onTasksRemoved() {
+    this.tasks = []
+  }
+
   public onUsernameTextEvent(username: string) {
     const user: User = {
       name: username
@@ -53,11 +67,19 @@ export class AppComponent {
     this.userService.add(user)
   }
 
+  public onTaskTextEvent(task: string) {
+    this.taskService.addTask(task)
+  }
+
   public onClearUserListEvent() {
     this.userService.removeUsers()
   }
 
   public onClearTaskListEvent() {
+    this.taskService.removeTasks()
+  }
 
+  public onAssignTasks() {
+    this.taskService.assignTasksToUsers()
   }
 }
