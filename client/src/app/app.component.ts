@@ -81,23 +81,28 @@ export class AppComponent {
 
   public onClearUserListEvent() {
     this.userService.removeUsers()
+    this.isTasksAssigned = false
   }
 
   public onClearTaskListEvent() {
     this.taskService.removeTasks()
+    this.isTasksAssigned = false
   }
 
   public isTasksReadyToBeAssigned(): boolean {
-    if (this.usernames.length > 0 && this.tasks.length > 0) {
+    if (this.usernames.length > 0 && this.tasks.length > 0 && !this.isTasksAssigned) {
       return true
     }
     return false
   }
 
   public onAssignTasks() {
-    // TODO Kolla att det finns användare och tasks! Visa fel om något gick fel!
-    this.taskService.assignTasksToUsers()
-    this.isTasksAssigned = true
+    try {
+      this.taskService.assignTasksToUsers()
+      this.isTasksAssigned = true
+    } catch(err) {
+      console.error(err)
+    }
   }
 
   public getUsersWithAssignedTasks() {
