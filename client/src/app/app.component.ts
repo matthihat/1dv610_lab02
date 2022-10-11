@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { formOptions } from './services/forms/form-options.model';
 import { User } from './models/user/User.model';
 import { FormOptionsService } from './services/forms/form-options.service';
-// import { UserRandomizerService } from './services/randomizer/user-randomizer.service';
 import { UserService } from './services/user/user.service';
 import { ListOptions } from './services/lists/list-options.model';
 import { ListOptionsService } from './services/lists/list-options.service';
@@ -59,10 +58,9 @@ export class AppComponent {
 
   private onTasksRemoved() {
     this.tasks = []
-    // this.taskService.removeTasks()
   }
 
-  public onUsernameTextEvent(username: string) {
+  public onUsername(username: string) {
     const user = this.constructUser(username)
     this.userService.add(user)
   }
@@ -75,7 +73,7 @@ export class AppComponent {
     }
   }
 
-  public onTaskTextEvent(task: string) {
+  public onTask(task: string) {
     this.taskService.addTask(task)
   }
 

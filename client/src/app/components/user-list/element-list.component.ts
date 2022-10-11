@@ -11,18 +11,17 @@ export class ElementListComponent {
   @Input() listOptions: ListOptions | undefined;
   @Input() elements: string[] = [];
   @Output() clearListEvent = new EventEmitter()
-  zz = "person"
 
   constructor() { }
 
-  shouldDisableClearButton(): boolean {
+  public shouldDisableClearButton(): boolean {
     if(this.elements.length < 1) {
       return true
     }
     return false
   }
 
-  handleClear() {
+  public handleClear() {
     this.clearListEvent.emit()
   }
 
