@@ -29,12 +29,12 @@ export class AssignedTasksListComponent implements OnInit {
     this.userService.usersRemoved$.subscribe(() => this.onRemoval())
   }
 
-  private onTasksAssigned() {
-    this.users = this.userService.getUsers()
-  }
-
   private onRemoval() {
     this.users = undefined
+  }
+
+  private onTasksAssigned() {
+    this.users = this.userService.getUsers()
   }
 
   get isElementsEmpty(): boolean {

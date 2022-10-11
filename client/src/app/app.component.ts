@@ -49,7 +49,6 @@ export class AppComponent {
 
   private onUsersRemoved() {
     this.usernames = []
-    // this.userService.removeUsers()
   }
 
   private onTaskAdded() {

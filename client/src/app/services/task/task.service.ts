@@ -33,8 +33,10 @@ export class TaskService {
   }
 
   /**
- * @throws {Error} - Error if no user exists
- */
+  * Assigns tasks to users in a randomly fashion.
+  *
+  * @throws {Error} - Error if no user exists.
+  */
   assignTasksToUsers() {
     this.tasks.forEach(task => {
       const randomUser = this.userService.getRandomUser()
