@@ -70,3 +70,7 @@ Hade gjort en tankevurpa i min modul och lagt till en validator som kollar att a
 Skulle vilja veta mer hur man ska tänka kring att ha publika attribut i en klass än att ha en metod eller getter som bara refererar till ett privat attribut. Mats Loock pratade om "privacy leak" en gång när jag pratade med honon men har inte hittat något i kursboken om detta. Dock något jag skulle vilja veta mer om!
 
 Blandad logik som sker både i html och i programkod. Vad är bäst? Tycker inte att boken tar upp detta vilket vore bra i och med ramverk där sådana kombinationer är vanliga. Hur åstadkommer man Clean Code i ex. React, Angular eller Vue?
+
+## Till Daniel
+
+Jag har en readme i appen under _client_ samt en för min modul under _module_

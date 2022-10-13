@@ -3,7 +3,7 @@ import { Subject } from 'rxjs';
 import { User } from 'src/app/models/user/User.model';
 import {v4 as uuidV4} from 'uuid'
 // @ts-ignore
-import UserRandomizer from '../../module/src/index.js'
+import UserRandomizer from '../../../../../module/src/index.js'
 
 @Injectable({
   providedIn: 'root'

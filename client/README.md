@@ -1,27 +1,38 @@
-# Client
+# För app-användare
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3.
+Denna app kan användas till att slumpmässigt dela ut uppgifter till ett visst antal användare.
 
-## Development server
+Du kan mata in flera användares namn och flera olika "att-göra-uppgifter". När både användare och uppgifter finns tillgängliga går det att slumpmässigt tilldela alla uppgifter till någon av användare. Uppgifterna tilldelas in "rättvist" på det viset att vissa användare inte får några uppgifter medan andra får flera.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Om du vill starta en ny tilldelning så är det bara att ladda om sidan eller att rensa någon av befintliga användare eller uppgifter.
 
-## Code scaffolding
+# För utvecklare (och examinator)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Denna app är en ren webbapplikation som behöver en server för att köras på.
+Nedan beskriver jag de steg som krävs för att starta och bygga appen.
 
-## Build
+## Beroenden
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+För att kunna köra verktyget krävs först att du installerar NodeJS, se [NodeJS](https://nodejs.org/en/). Detta projekt tar också hjälp av command-line-verktyget [Angular CLI](https://github.com/angular/angular-cli) version 14.2.3 för att starta och bygga projektet. Du hittar information om hur du installerar det [här](https://angular.io/guide/setup-local) Efter att du installerat NodeJS behöver du alltså installera Angular CLI.
 
-## Running unit tests
+I _filen package.json_ finns de paket som applikationen är berorende av. Slutligen måste du alltså installera dessa med hjälp av Node genom att köra kommandot `npm install`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Du behöver också ha importerat allt under katalogen `module` då det där finns ett beroende som inte hanteras via filem _package.json_
 
-## Running end-to-end tests
+När du gjort ovanstående steg kan du starta appen.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Starta utvecklingmiljö
 
-## Further help
+Kör `ng serve` for att starta appen med hjälp av en utvecklingsserver. Navigera till `http://localhost:4200/`. Applikationen kommer automatiskt att laddas om ifall du ändrar något i källkodsfilerna.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Bygg
+
+Kör `ng build` för att bygga projektet. Artefakterna från bygget sparas då under den genererade katalogen `dist/`.
+
+## Version
+
+1.0
+
+## Feedback
+
+Kan ske genom att göra nya issues eller pull-requests mot projektet på [Github](https://github.com/matthihat/1dv610_lab02)
