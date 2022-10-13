@@ -2,7 +2,7 @@
 
 Denna app kan användas till att slumpmässigt dela ut uppgifter till ett visst antal användare.
 
-Du kan mata in flera användares namn och flera olika "att-göra-uppgifter". När både användare och uppgifter finns tillgängliga går det att slumpmässigt tilldela alla uppgifter till någon av användare. Uppgifterna tilldelas in "rättvist" på det viset att vissa användare inte får några uppgifter medan andra får flera.
+Du kan mata in flera användares namn och flera olika "att-göra-uppgifter". När både användare och uppgifter finns tillgängliga går det att slumpmässigt tilldela alla uppgifter till någon av användare. Uppgifterna tilldelas in "rättvist" på det viset att vissa användare inte får några uppgifter medan andra får flera. Användbart vid t.ex. en daily standup för att dela ut uppgifter som ingen vill göra!
 
 Om du vill starta en ny tilldelning så är det bara att ladda om sidan eller att rensa någon av befintliga användare eller uppgifter.
 
@@ -17,7 +17,7 @@ För att kunna köra verktyget krävs först att du installerar NodeJS, se [Node
 
 I _filen package.json_ finns de paket som applikationen är berorende av. Slutligen måste du alltså installera dessa med hjälp av Node genom att köra kommandot `npm install`
 
-Du behöver också ha importerat allt under katalogen `module` då det där finns ett beroende som inte hanteras via filem _package.json_
+Du behöver också ha importerat allt under katalogen `module` då det där finns ett beroende som inte hanteras via filem _package.json_. Denna modul kommer ursprungligen från [Gitlab](https://github.com/matthihat/randomify).
 
 När du gjort ovanstående steg kan du starta appen.
 

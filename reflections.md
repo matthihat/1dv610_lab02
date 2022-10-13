@@ -71,6 +71,6 @@ Skulle vilja veta mer hur man ska tänka kring att ha publika attribut i en klas
 
 Blandad logik som sker både i html och i programkod. Vad är bäst? Tycker inte att boken tar upp detta vilket vore bra i och med ramverk där sådana kombinationer är vanliga. Hur åstadkommer man Clean Code i ex. React, Angular eller Vue?
 
-## Till Daniel
+## Till Examinator
 
-Jag har en readme i appen under _client_ samt en för min modul under _module_
+Modulen och test-appen finns på [Gitlab](https://github.com/matthihat/randomify)
